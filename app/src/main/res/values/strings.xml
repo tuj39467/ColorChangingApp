@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ColorChangingApp</string>
+    <string name="Red">Red</string>
+    <string name="Yellow">Yellow</string>
+    <string name="Green">Green</string>
+    <string name="Blue">Blue</string>
+    <string name="Cyan">Cyan</string>
+    <string name="White">White</string>
+    <string name="DarkGrey">Dark Grey</string>
+    <string name="Aqua">Aqua</string>
+    <string name="LightGray">Light Gray</string>
+    <string name="Gray">Gray</string>
+    <string name="Magenta">Magenta</string>
+    <string name="Black">Black</string>
 </resources>

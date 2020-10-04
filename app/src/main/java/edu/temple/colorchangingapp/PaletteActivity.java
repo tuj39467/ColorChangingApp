@@ -34,7 +34,7 @@ public class PaletteActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent canvasActivityIntent = new Intent(PaletteActivity.this,CanvasActivity.class);
-                canvasActivityIntent.putExtra("Color",colors);
+                canvasActivityIntent.putExtra("Color",position);
                 startActivity(canvasActivityIntent);
 
             }

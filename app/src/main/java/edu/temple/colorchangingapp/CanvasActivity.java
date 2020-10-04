@@ -9,58 +9,86 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import android.widget.TextView;
 
 public class CanvasActivity extends AppCompatActivity {
     ConstraintLayout myLayout;
-    //TextView text;
+   // TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView text = new TextView(this);
+        text.setGravity(4);
+
         myLayout = findViewById(R.id.myLayout);
-        //text = findViewById(R.id.textView);
+       // text = (TextView)findViewById(R.id.textview);
+
         Intent result = getIntent();
-        // String color = "";
+
         int color = result.getIntExtra("Color",0);
 
-        if(color==(0)) {
+        if(color == 0) {
             myLayout.setBackgroundColor(Color.RED);
-            finish();
+           // text = (TextView)findViewById(R.id.textview);
+            text.setText(R.string.Red);
+            myLayout.addView(text);
         }
         else if(color == 1) {
             myLayout.setBackgroundColor(Color.YELLOW);
-            finish();
-        }/*else if(color.equals("Green")) {
+            text.setText(R.string.Yellow);
+            myLayout.addView(text);
+
+        }else if(color == 2) {
             myLayout.setBackgroundColor(Color.GREEN);
-            finish();
-        }else if(color.equals("Blue")) {
+            text.setText(R.string.Green);
+            myLayout.addView(text);
+
+        }else if(color == 3) {
             myLayout.setBackgroundColor(Color.BLUE);
-            finish();
-        }else if(color.equals("Cyan")) {
+            text.setText(R.string.Blue);
+            myLayout.addView(text);
+
+        }else if(color == 4) {
             myLayout.setBackgroundColor(Color.CYAN);
-            finish();
-        }else if(color.equals("Black")) {
+            text.setText(R.string.Cyan);
+            myLayout.addView(text);
+
+        }else if(color == 5) {
             myLayout.setBackgroundColor(Color.BLACK);
-            finish();
-        }else if(color.equals("Magenta")) {
+            text.setText(R.string.Black);
+            myLayout.addView(text);
+
+        }else if(color == 6) {
             myLayout.setBackgroundColor(Color.MAGENTA);
-            finish();
-        }else if(color.equals("Gray")) {
+            text.setText(R.string.Magenta);
+            myLayout.addView(text);
+        }else if(color == 7) {
             myLayout.setBackgroundColor(Color.GRAY);
-            finish();
-        }else if(color.equals("Light gray")) {
+            text.setText(R.string.Gray);
+            myLayout.addView(text);
+
+        }else if(color == 8) {
             myLayout.setBackgroundColor(Color.LTGRAY);
-            finish();
-        }else if(color.equals("Dark gray")) {
+            text.setText(R.string.LightGray);
+            myLayout.addView(text);
+
+        }else if(color == 9) {
             myLayout.setBackgroundColor(Color.DKGRAY);
-            finish();
-        }else if(color.equals("Aqua")) {
-            myLayout.setBackgroundColor(Color.CYAN);
-            finish();
-        }else if(color.equals("White")) {
+            text.setText(R.string.DarkGrey);
+            myLayout.addView(text);
+
+        }else if(color == 10) {
             myLayout.setBackgroundColor(Color.TRANSPARENT);
-            finish();
-        }*/
+            text.setText(R.string.White);
+            myLayout.addView(text);
+
+        }else if(color == 11) {
+            myLayout.setBackgroundColor(Color.CYAN);
+            text.setText(R.string.Aqua);
+            myLayout.addView(text);
+
+        }
     }
 }
