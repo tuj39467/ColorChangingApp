@@ -39,7 +39,6 @@ public class CanvasActivity extends AppCompatActivity {
             myLayout.setBackgroundColor(Color.YELLOW);
             text.setText(R.string.Yellow);
             myLayout.addView(text);
-
         }else if(color == 2) {
             myLayout.setBackgroundColor(Color.GREEN);
             text.setText(R.string.Green);
@@ -90,5 +89,7 @@ public class CanvasActivity extends AppCompatActivity {
             myLayout.addView(text);
 
         }
+
     }
+
 }
