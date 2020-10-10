@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
         Context context;
         String[] colors;
-//<string name="label">Activité de toile</string>
+
         public ColorAdapter(Context context,String[] colors){
             this.context = context;
             this.colors = colors;
