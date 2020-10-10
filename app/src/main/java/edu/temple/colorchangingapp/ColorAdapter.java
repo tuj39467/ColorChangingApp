@@ -1,6 +1,7 @@
 package edu.temple.colorchangingapp;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,13 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
         Context context;
         String[] colors;
-
+//<string name="label">Activité de toile</string>
         public ColorAdapter(Context context,String[] colors){
             this.context = context;
             this.colors = colors;
         }
+
+
 
         @Override
         public int getCount() {
