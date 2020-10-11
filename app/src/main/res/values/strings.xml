@@ -15,4 +15,18 @@
     <string name="Magenta">Magenta</string>
     <string name="Black">Black</string>
     <string name="instruction">Click a color below</string>
+    <string-array name="Colors">
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>White</item>
+        <item>Dark Gray</item>
+        <item>Aqua</item>
+        <item>Light Gray</item>
+        <item>Gray</item>
+        <item>Magenta</item>
+        <item>Black</item>
+    </string-array>
 </resources>

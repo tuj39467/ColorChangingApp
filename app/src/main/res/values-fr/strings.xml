@@ -16,4 +16,20 @@
         <string name="Magenta">Magenta</string>
         <string name="Black">Noir</string>
         <string name="instruction">Cliquez sur une couleur ci-dessous</string>
+        <string-array name="Colors">
+                <item>Rouge</item>
+                <item>Jaune</item>
+                <item>Vert</item>
+                <item>Bleu</item>
+                <item>Cyan</item>
+                <item>Noir</item>
+                <item>Magenta</item>
+                <item>Gris</item>
+                <item>Gris Clair</item>
+                <item>Gris Foncé</item>
+                <item>Blanc</item>
+                <item>Aqua</item>
+        </string-array>
+
+
 </resources>
