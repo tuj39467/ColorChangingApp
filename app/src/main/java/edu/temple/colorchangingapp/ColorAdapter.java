@@ -17,19 +17,6 @@ public class ColorAdapter extends BaseAdapter {
             this.colors = colors;
         }
 
-//android:label="@string/label1">
-    /*
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="256dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/instruction"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-     */
 
         @Override
         public int getCount() {
