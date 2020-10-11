@@ -23,7 +23,7 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getSupportActionBar().setTitle()
+        getSupportActionBar().setTitle(R.string.label1);
         myLayout = findViewById(R.id.myLayout);
         grid = (GridView) findViewById(R.id.gridview);
 

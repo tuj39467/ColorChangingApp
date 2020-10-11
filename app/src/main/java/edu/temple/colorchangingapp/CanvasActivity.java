@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 public class CanvasActivity extends AppCompatActivity {
     ConstraintLayout myLayout;
-   // TextView text;
-   //Resources res = CanvasActivity.getResources();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +24,6 @@ public class CanvasActivity extends AppCompatActivity {
         text.setGravity(4);
 
         myLayout = findViewById(R.id.myLayout);
-       // text = (TextView)findViewById(R.id.textview);
 
         Intent result = getIntent();
 
@@ -33,7 +31,6 @@ public class CanvasActivity extends AppCompatActivity {
 
         if(color == 0) {
             myLayout.setBackgroundColor(Color.RED);
-           // text = (TextView)findViewById(R.id.textview);
             text.setText(R.string.Red);
             myLayout.addView(text);
         }

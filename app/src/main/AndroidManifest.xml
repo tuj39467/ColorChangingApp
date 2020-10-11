@@ -14,8 +14,7 @@
             android:name=".CanvasActivity"
             android:label="@string/label" />
         <activity
-            android:name=".PaletteActivity"
-            android:label="@string/label1">
+            android:name=".PaletteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
