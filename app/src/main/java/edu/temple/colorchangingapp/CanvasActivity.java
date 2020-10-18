@@ -1,16 +1,12 @@
 package edu.temple.colorchangingapp;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import android.widget.TextView;
 
 public class CanvasActivity extends AppCompatActivity {
     ConstraintLayout myLayout;
@@ -23,7 +19,7 @@ public class CanvasActivity extends AppCompatActivity {
         TextView text = new TextView(this);
         text.setGravity(4);
 
-        myLayout = findViewById(R.id.myLayout);
+        myLayout = findViewById(R.id.layout);
 
         Intent result = getIntent();
 

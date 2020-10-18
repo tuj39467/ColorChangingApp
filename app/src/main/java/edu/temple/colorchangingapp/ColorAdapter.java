@@ -9,11 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
-        Context context;
+    PaletteFragment context;
         String[] colors;
 
-        public ColorAdapter(Context context,String[] colors){
-            this.context = context;
+        public ColorAdapter(PaletteFragment context, String[] colors){
+            //MainActivity.context = context;
             this.colors = colors;
         }
 
@@ -37,13 +37,13 @@ public class ColorAdapter extends BaseAdapter {
 
             final int[] colored = {Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.CYAN, Color.BLACK, Color.MAGENTA, Color.GRAY, Color.LTGRAY, Color.DKGRAY,Color.TRANSPARENT,Color.CYAN};
 
-            TextView textView;
-            if(convertView == null) {
-                textView = new TextView(context);
-            }
-            else{
-                textView = (TextView) convertView;
-            }
+            TextView textView = (TextView) convertView;
+            //if(convertView == null) {
+             //   textView = new TextView(context);
+            //}
+            //else{
+             //   textView = (TextView) convertView;
+            //}
             textView.setPadding(40,40,40,40);
             textView.setText(getItem(position).toString());
             textView.setBackgroundColor(colored[position % colored.length]);
