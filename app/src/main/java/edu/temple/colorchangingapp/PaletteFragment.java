@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ public class PaletteFragment extends Fragment {
     private static final String KEY_COLOR = "defaultColor";
     private selectInterface parentActivity;
     GridView grid;
+    FrameLayout myLayout;
 
     public PaletteFragment() {
 
@@ -57,11 +59,6 @@ public class PaletteFragment extends Fragment {
 
     }
 
-    /*
-        public void setOnColorSelectedListener(selectInterface pf){
-            this.pf = pf;
-        }
-    */
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
 
@@ -78,35 +75,27 @@ public class PaletteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         View l = inflater.inflate(R.layout.fragment_palette, container, false);
-        //final String[] colors = {"Red", "Yellow", "Green", "Blue", "Cyan", "Black", "Magenta","Gray","Light gray","Dark gray","White","Aqua"};
+
         grid = (GridView) l.findViewById(R.id.gridview);
 
+        Resources res = getResources();
+        final String[] colorList = res.getStringArray(R.array.Colors);
 
-
-        // final BaseAdapter ColorAdapter = new ColorAdapter(PaletteFragment.this, colorList);
-
-        //TextView text = new TextView(MainActivity);
-        //text.setText(R.string.instruction);
-        // myLayout.addView(text);
-
-        // grid.setAdapter(ColorAdapter);
-        grid.setAdapter(new ColorAdapter(PaletteFragment.this, getArguments().getStringArray(dataKey)));
+        grid.setAdapter(new ColorAdapter(getActivity(),colorList));
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                parentActivity.displayColorInfo(((TextView)view).getText().toString());
-
+                parentActivity.displayColorInfo(position);
             }
         });
 
         return l;
 
     }
+
     public interface selectInterface{
-        void displayColorInfo(String color);
+        void displayColorInfo(int color);
     }
 }

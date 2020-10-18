@@ -9,9 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.GridView;
 
-public class MainActivity extends AppCompatActivity implements PaletteFragment.selectInterface {
+public class MainActivity extends AppCompatActivity implements PaletteFragment.selectInterface{
 
-    PaletteFragment[] fragments;
+   // PaletteFragment[] fragments;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +21,6 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.s
         setContentView(R.layout.activity_main);
 
         PaletteFragment.newInstance(0,"Red");
-        //CanvasFragment.newInstance(0,"Red");
-
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container_1,new PaletteFragment())
@@ -28,17 +28,11 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.s
                 .commit();
     }
 
-    public void displayColorInfo(String color){
+
+    public void displayColorInfo(int color){
+        ((CanvasFragment) getSupportFragmentManager().findFragmentById(R.id.container_2)).setColorToShow(color);
 
     }
-
-    /*public void onAttachFragment(Fragment fragment){
-        if(fragment instanceof PaletteFragment){
-            PaletteFragment pf = (PaletteFragment)fragment;
-            pf.setOnColorSelectedListener(this);
-        }
-    }*/
-
 }
 
 

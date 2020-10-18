@@ -9,11 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
-    PaletteFragment context;
+        Context context;
         String[] colors;
 
-        public ColorAdapter(PaletteFragment context, String[] colors){
-            //MainActivity.context = context;
+        public ColorAdapter(Context context, String[] colors){
+            this.context = context;
             this.colors = colors;
         }
 
@@ -30,21 +30,18 @@ public class ColorAdapter extends BaseAdapter {
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return position;
         }
 
         public View getView(int position, View convertView, ViewGroup parent){
 
             final int[] colored = {Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.CYAN, Color.BLACK, Color.MAGENTA, Color.GRAY, Color.LTGRAY, Color.DKGRAY,Color.TRANSPARENT,Color.CYAN};
 
-            TextView textView = (TextView) convertView;
-            //if(convertView == null) {
-             //   textView = new TextView(context);
-            //}
-            //else{
-             //   textView = (TextView) convertView;
-            //}
-            textView.setPadding(40,40,40,40);
+            TextView textView = new TextView(context);
+            textView.setId(position);
+            textView.setText(colors[position]);
+            textView.setTextSize(20);
+            textView.setPadding(10,20,10,10);
             textView.setText(getItem(position).toString());
             textView.setBackgroundColor(colored[position % colored.length]);
 
@@ -52,9 +49,9 @@ public class ColorAdapter extends BaseAdapter {
             return textView;
 
         }
-        public View getDropDownView(int position, View convertView, ViewGroup parent){
+        /*public View getDropDownView(int position, View convertView, ViewGroup parent){
             return getView(position,convertView,parent);
-        }
+        }*/
     }
 
 
