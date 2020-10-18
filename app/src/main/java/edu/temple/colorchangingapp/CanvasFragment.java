@@ -1,64 +1,106 @@
 package edu.temple.colorchangingapp;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CanvasFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CanvasFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FrameLayout myLayout;
+    TextView colorText;
+    public static final String dataKey = "bundle_data_key";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public CanvasFragment(){
 
-    public CanvasFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CanvasFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CanvasFragment newInstance(String param1, String param2) {
+    public static CanvasFragment newInstance(Bundle bundle) {
         CanvasFragment fragment = new CanvasFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        fragment.setArguments(bundle);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_canvas, container, false);
+       View v = inflater.inflate(R.layout.fragment_canvas, container, false);
+       myLayout = v.findViewById(R.id.canvasLayout);
+       colorText = v.findViewById(R.id.canvasText);
+
+       return v;
+    }
+
+    public void setColorToShow(String color){
+        assert color != null;
+        Resources res = getResources();
+        String[] colorList = res.getStringArray(R.array.Colors);
+
+       // int colorDisplay = 0;
+
+        if(color.equals(colorList[0])){
+            myLayout.setBackgroundColor(Color.RED);
+            colorText.setText(R.string.Green);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[1])){
+            myLayout.setBackgroundColor(Color.YELLOW);
+            colorText.setText(R.string.Yellow);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[2])){
+            myLayout.setBackgroundColor(Color.GREEN);
+            colorText.setText(R.string.Green);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[3])){
+            myLayout.setBackgroundColor(Color.BLUE);
+            colorText.setText(R.string.Blue);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[4])){
+            myLayout.setBackgroundColor(Color.CYAN);
+            colorText.setText(R.string.Cyan);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[5])){
+            myLayout.setBackgroundColor(Color.BLACK);
+            colorText.setText(R.string.Black);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[6])){
+            myLayout.setBackgroundColor(Color.MAGENTA);
+            colorText.setText(R.string.Magenta);
+            myLayout.addView(colorText);
+        }
+        else if(color.equals(colorList[7])){
+            myLayout.setBackgroundColor(Color.GRAY);
+            colorText.setText(R.string.Gray);
+            myLayout.addView(colorText);
+        }else if(color.equals(colorList[8])){
+            myLayout.setBackgroundColor(Color.LTGRAY);
+            colorText.setText(R.string.LightGray);
+            myLayout.addView(colorText);
+        }else if(color.equals(colorList[9])){
+            myLayout.setBackgroundColor(Color.DKGRAY);
+            colorText.setText(R.string.DarkGrey);
+            myLayout.addView(colorText);
+        }else if(color.equals(colorList[10])){
+            myLayout.setBackgroundColor(Color.WHITE);
+            colorText.setText(R.string.White);
+            myLayout.addView(colorText);
+        }else if(color.equals(colorList[11])){
+            myLayout.setBackgroundColor(Color.CYAN);
+            colorText.setText(R.string.Aqua);
+            myLayout.addView(colorText);
+        }
     }
 }
