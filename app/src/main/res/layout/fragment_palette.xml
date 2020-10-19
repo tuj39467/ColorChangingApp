@@ -10,9 +10,10 @@
     <GridView
         android:id="@+id/gridview"
         android:layout_width="404dp"
-        android:layout_height="556dp"
+        android:layout_height="500dp"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="90dp"
         android:columnWidth="100dp"
         android:gravity="top"
         android:horizontalSpacing="0dp"
@@ -23,10 +24,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/canvasText"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
         android:gravity="center"
-        android:text="@string/instruction" />
+        android:text="@string/instruction"
+        android:textSize="25sp"
+        />
 
 </FrameLayout>

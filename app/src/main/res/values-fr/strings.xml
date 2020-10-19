@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
         <string name="app_name">Application de changement de couleur</string>
         <string name="label">Activité de toile</string>
         <string name="label1">Activité de la palette</string>
@@ -30,6 +30,4 @@
                 <item>Blanc</item>
                 <item>Aqua</item>
         </string-array>
-
-
 </resources>

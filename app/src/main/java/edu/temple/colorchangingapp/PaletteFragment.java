@@ -21,13 +21,12 @@ import android.widget.TextView;
 
 public class PaletteFragment extends Fragment {
 
-    int fragmentId;
-    String defaultColor;
+    String [] defaultColors;
     public static final String dataKey = "bundle_data_key";
 
-    private static final String KEY_ID = "fragmentId";
-    private static final String KEY_COLOR = "defaultColor";
-    private selectInterface parentActivity;
+    static String[] colors = {"Red", "Yellow", "Green", "Blue", "Cyan", "Black", "Magenta","Gray","Light gray","Dark gray","White","Aqua"};;
+    private static final String KEY_COLORS = "colors";
+    selectInterface parentActivity;
     GridView grid;
     FrameLayout myLayout;
 
@@ -35,11 +34,10 @@ public class PaletteFragment extends Fragment {
 
     }
 
-    public static PaletteFragment newInstance(int fragmentId, String color) {
+    public static PaletteFragment newInstance(String[] colors) {
         PaletteFragment pf = new PaletteFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(KEY_ID, fragmentId);
-        bundle.putString(KEY_COLOR, color);
+        bundle.putStringArray(KEY_COLORS, colors);
         pf.setArguments(bundle);
         return pf;
     }
@@ -50,11 +48,9 @@ public class PaletteFragment extends Fragment {
 
         Bundle bundle;
         if ((bundle = getArguments()) != null) {
-            fragmentId = bundle.getInt(KEY_ID);
-            defaultColor = bundle.getString(KEY_COLOR);
+            defaultColors = bundle.getStringArray(KEY_COLORS);
         } else {
-            fragmentId = -1;
-            defaultColor = "White";
+            defaultColors = null;
         }
 
     }

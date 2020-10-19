@@ -41,7 +41,7 @@ public class ColorAdapter extends BaseAdapter {
             textView.setId(position);
             textView.setText(colors[position]);
             textView.setTextSize(20);
-            textView.setPadding(10,20,10,10);
+            textView.setPadding(10,10,10,10);
             textView.setText(getItem(position).toString());
             textView.setBackgroundColor(colored[position % colored.length]);
 
@@ -49,9 +49,6 @@ public class ColorAdapter extends BaseAdapter {
             return textView;
 
         }
-        /*public View getDropDownView(int position, View convertView, ViewGroup parent){
-            return getView(position,convertView,parent);
-        }*/
     }
 
 
